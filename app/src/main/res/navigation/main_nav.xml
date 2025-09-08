@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.bcsbattle.sbs_e_mart.DetailsFragment"
+        android:name="com.bcsbattle.sbs_e_mart.ui.details.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" />
 </navigation>

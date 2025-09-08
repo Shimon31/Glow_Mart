@@ -11,12 +11,8 @@ interface ProductService {
     @GET("products.json?")
     suspend fun getAllProducts(): Response<List<ResponseProduct>>
 
-    @GET("products.json?")
-    suspend fun getProductById(
-
-        @Path("id") id : Int
-
-    ): Response<ResponseProduct>
-
+    // The @GET URL should include the {id} placeholder in the path
+    @GET("products/{id}.json")  // Replace `products/{id}.json` with the actual API endpoint
+    suspend fun getProductById(@Path("id") productId: Int): Response<ResponseProduct>
 
 }

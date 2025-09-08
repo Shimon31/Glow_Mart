@@ -33,13 +33,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
           adapter.submitList(it)
           binding.recyclerView1.adapter=adapter
 
-          it.forEach { item->
-
-              Log.d("TAG", "onViewCreated: ${item}")
-
-
-          }
-
       }
 
 

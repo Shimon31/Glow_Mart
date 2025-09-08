@@ -43,7 +43,7 @@ class HomeViewModel @Inject constructor(private val repo : getProductRepo) : Vie
     fun getProductById(id: Int){
         viewModelScope.launch {
 
-            val repo = repo.getProductById(id)
+            val repo = repo.getProductById(200)
         if (repo.isSuccessful){
             _productResponse.postValue(repo.body())
         }}
