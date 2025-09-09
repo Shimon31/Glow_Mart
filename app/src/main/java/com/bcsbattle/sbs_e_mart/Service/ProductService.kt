@@ -15,4 +15,8 @@ interface ProductService {
     @GET("products/{id}.json")  // Replace `products/{id}.json` with the actual API endpoint
     suspend fun getProductById(@Path("id") productId: Int): Response<ResponseProduct>
 
+
+    @GET("products.json?brand=covergirl&product_type=lipstick")
+    suspend fun getTrendyProducts(): Response<List<ResponseProduct>>
+
 }

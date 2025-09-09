@@ -15,4 +15,9 @@ class getProductRepo @Inject constructor(private val service : ProductService) {
     suspend fun getProductById(id: Int) : Response<ResponseProduct>{
         return service.getProductById(id)
     }
+
+    suspend fun getTrendyProduct(): Response<List<ResponseProduct>>{
+
+        return service.getTrendyProducts()
+    }
 }

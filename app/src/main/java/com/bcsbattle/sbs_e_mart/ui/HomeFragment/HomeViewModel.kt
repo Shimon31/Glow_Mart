@@ -23,6 +23,7 @@ class HomeViewModel @Inject constructor(private val repo : getProductRepo) : Vie
 
     init {
         getAllProduct()
+        getAllTrendyProduct()
     }
 
     private fun getAllProduct(){
@@ -31,6 +32,21 @@ class HomeViewModel @Inject constructor(private val repo : getProductRepo) : Vie
             val response = repo.getAllProducts()
             if (response.isSuccessful){
                 _allProductResponse.postValue(response.body())
+            }
+            _isLoading.postValue(false)
+        }
+    }
+
+    private var _allTrendyProductResponse = MutableLiveData<List<ResponseProduct>>()
+    val allTrendyProductResponse : LiveData<List<ResponseProduct>>
+        get() = _allTrendyProductResponse
+
+    private fun getAllTrendyProduct(){
+        viewModelScope.launch {
+            _isLoading.postValue(true)
+            val response = repo.getTrendyProduct()
+            if (response.isSuccessful){
+                _allTrendyProductResponse.postValue(response.body())
             }
             _isLoading.postValue(false)
         }
