@@ -57,6 +57,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/product_brand" />
 
+        <!-- Product Price -->
+        <TextView
+            android:id="@+id/productDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="details of product"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_price" />
+
         <!-- Product Rating -->
         <TextView
             android:id="@+id/product_rating"
@@ -66,7 +76,7 @@
             android:textSize="14sp"
             android:textColor="@android:color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/product_price" />
+            app:layout_constraintTop_toBottomOf="@id/productDescription" />
 
         <!-- Product Category -->
         <TextView
