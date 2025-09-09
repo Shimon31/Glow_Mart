@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Active (selected) Text Appearance -->
+    <style name="BottomNavigationActiveText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#4CAF50</item> <!-- Green color for selected text -->
+        <item name="android:textSize">14sp</item> <!-- Set your desired text size -->
+    </style>
+
+    <!-- Inactive (unselected) Text Appearance -->
+    <style name="BottomNavigationInactiveText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item> <!-- White color for unselected text -->
+        <item name="android:textSize">12sp</item> <!-- Smaller text size for unselected -->
+    </style>
+
+</resources>

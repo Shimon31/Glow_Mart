@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.SBS_EMart" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+     <item name="colorPrimary">@color/primaryClr</item>
     </style>
 
     <style name="Theme.SBS_EMart" parent="Base.Theme.SBS_EMart" />
