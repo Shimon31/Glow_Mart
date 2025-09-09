@@ -8,7 +8,7 @@ import retrofit2.http.Path
 interface ProductService {
 
 
-    @GET("products.json?")
+    @GET("products.json?brand=maybelline")
     suspend fun getAllProducts(): Response<List<ResponseProduct>>
 
     // The @GET URL should include the {id} placeholder in the path

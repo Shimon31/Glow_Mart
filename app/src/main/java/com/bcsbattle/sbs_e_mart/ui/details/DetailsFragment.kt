@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
+import com.bcsbattle.sbs_e_mart.R
+import androidx.navigation.fragment.findNavController
 import coil.load
 import com.bcsbattle.sbs_e_mart.base.BaseFragment
 import com.bcsbattle.sbs_e_mart.databinding.FragmentDetailsBinding
@@ -18,6 +20,10 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.backBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_detailsFragment_to_homeFragment)
+        }
 
         // Get product ID from navigation arguments
         val productId = arguments?.getInt("product_id")
@@ -36,12 +42,12 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
             product?.let {
                 binding.apply {
                     productImage.load(it.imageLink)
-                    productName.text = it.name
-                    productBrand.text = it.brand
-                    productPrice.text = "$${it.price}"
-                    productRating.text = "${it.rating}"
-                    productCategory.text = it.category
-                    productDescription.text = it.description // Add this if you have description field
+                    productName.text = "Product Name: ${it.name}"
+                    productBrand.text = "Brand: ${it.brand}"
+                    productPrice.text = "Price: $${it.price}"
+                    productRating.text = "Rate: ${it.rating}"
+                    productCategory.text = "Category: ${it.category}"
+                    productDescription.text = "Description:${it.description}" // Add this if you have description field
                 }
             }
         }
