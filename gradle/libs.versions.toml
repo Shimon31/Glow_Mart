@@ -23,6 +23,7 @@ hilt = "2.56.2"
 coil = "2.7.0"
 fragment = "1.8.9"
 nav_version = "2.9.3"
+materialVersion = "1.13.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,6 +51,7 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
+google-material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
 
 
 [plugins]

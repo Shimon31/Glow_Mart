@@ -32,6 +32,10 @@ class HomeFragment :
 
         // Observe the data from ViewModel and populate both RecyclerViews
         observeViewModel()
+
+        binding.cardView2.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+        }
     }
 
     // Setup RecyclerView1 (Recommended Products)

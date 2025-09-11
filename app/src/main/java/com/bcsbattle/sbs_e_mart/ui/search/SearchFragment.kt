@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.bcsbattle.sbs_e_mart.R
 import com.bcsbattle.sbs_e_mart.base.BaseFragment
 import com.bcsbattle.sbs_e_mart.data.Product.ResponseProduct
@@ -76,6 +78,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
 
     }
     override fun onItemClick(id: Int?) {
-        // handle navigation to details
+        val bundle = bundleOf("product_id" to id)
+        findNavController().navigate(R.id.action_searchFragment_to_detailsFragment, bundle)
     }
 }
