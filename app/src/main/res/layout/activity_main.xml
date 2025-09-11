@@ -9,7 +9,7 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
+    <fragment
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
@@ -25,9 +25,9 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:background="@color/primaryClr"
-        app:itemIconTint="@color/white"
+        android:layout_height="75dp"
+        android:background="@color/black"
+        app:itemIconTint="@color/nav_item_color"
         app:itemTextAppearanceActive="@style/BottomNavigationActiveText"
         app:itemTextAppearanceInactive="@style/BottomNavigationInactiveText"
         app:itemTextColor="@color/white"

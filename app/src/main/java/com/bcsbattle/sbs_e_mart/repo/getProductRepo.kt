@@ -20,4 +20,8 @@ class getProductRepo @Inject constructor(private val service : ProductService) {
 
         return service.getTrendyProducts()
     }
+
+    suspend fun getAllProductForSearch(): Response<List<ResponseProduct>>{
+        return  service.getAllProductsForSearch()
+    }
 }

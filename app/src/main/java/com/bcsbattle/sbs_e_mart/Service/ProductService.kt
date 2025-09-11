@@ -19,6 +19,9 @@ interface ProductService {
     @GET("products.json?brand=covergirl&product_type=mascara")
     suspend fun getTrendyProducts(): Response<List<ResponseProduct>>
 
+    @GET("products.json?")
+    suspend fun getAllProductsForSearch(): Response<List<ResponseProduct>>
+
 
 
 }
