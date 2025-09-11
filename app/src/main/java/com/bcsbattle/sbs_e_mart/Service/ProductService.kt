@@ -16,7 +16,9 @@ interface ProductService {
     suspend fun getProductById(@Path("id") productId: Int): Response<ResponseProduct>
 
 
-    @GET("products.json?brand=covergirl&product_type=lipstick")
+    @GET("products.json?brand=covergirl&product_type=mascara")
     suspend fun getTrendyProducts(): Response<List<ResponseProduct>>
+
+
 
 }

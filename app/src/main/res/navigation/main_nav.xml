@@ -25,22 +25,22 @@
     </fragment>
     <fragment
         android:id="@+id/messageFragment"
-        android:name="com.bcsbattle.sbs_e_mart.MessageFragment"
+        android:name="com.bcsbattle.sbs_e_mart.ui.message.MessageFragment"
         android:label="fragment_message"
         tools:layout="@layout/fragment_message" />
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.bcsbattle.sbs_e_mart.CartFragment"
+        android:name="com.bcsbattle.sbs_e_mart.ui.cart.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.bcsbattle.sbs_e_mart.ProfileFragment"
+        android:name="com.bcsbattle.sbs_e_mart.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.bcsbattle.sbs_e_mart.SearchFragment"
+        android:name="com.bcsbattle.sbs_e_mart.ui.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
 </navigation>
