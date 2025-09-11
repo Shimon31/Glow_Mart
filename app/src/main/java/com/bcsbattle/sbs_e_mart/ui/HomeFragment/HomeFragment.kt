@@ -49,28 +49,36 @@ class HomeFragment :
     }
 
     private fun observeViewModel() {
-        // Observe loading state
+        // Observe loading state for recommended products
         viewModel.isLoading.observe(viewLifecycleOwner) { loading ->
-            if (loading) showProgressBar() else hideProgressBar()
+            if (loading){
+                showProgressBar()
+                showProgressBar2()
+        }
+            else {
+                hideProgressBar()
+                hideProgressBar2()
+            }
         }
 
-        // Observe recommended products (allProductResponse) for first RecyclerView
+        // Recommended products (RecyclerView1)
         viewModel.allProductResponse.observe(viewLifecycleOwner) { products ->
             if (!products.isNullOrEmpty()) {
-                recommendedAdapter.submitList(products)  // Submit recommended products to the first RecyclerView
+                recommendedAdapter.submitList(products)
                 showRecyclerView1()
             } else {
                 Log.d("HomeFragment", "No recommended products received")
             }
         }
 
-        // Observe trendy products (allTrendyProductResponse) for second RecyclerView
+        // Trendy products (RecyclerView2)
         viewModel.allTrendyProductResponse.observe(viewLifecycleOwner) { trendyProducts ->
-            if (!trendyProducts.isNullOrEmpty()) {
-                trendyAdapter.submitList(trendyProducts)  // Submit trendy products to the second RecyclerView
-                showRecyclerView2()
+            if (trendyProducts == null) {
+                showProgressBar2()
             } else {
-                Log.d("HomeFragment", "No trendy products received")
+                trendyAdapter.submitList(trendyProducts)
+                hideProgressBar2()
+                showRecyclerView2()
             }
         }
     }
@@ -79,13 +87,24 @@ class HomeFragment :
     private fun showProgressBar() = with(binding) {
         progressBar.visibility = View.VISIBLE
         recyclerView1.visibility = View.INVISIBLE
-        recyclerView2.visibility = View.INVISIBLE
+
     }
 
     // Hide progress bar after data is loaded
     private fun hideProgressBar() = with(binding) {
         progressBar.visibility = View.GONE
         recyclerView1.visibility = View.VISIBLE
+
+    }
+
+    private fun showProgressBar2() = with(binding) {
+        progressBar2.visibility = View.VISIBLE
+        recyclerView2.visibility = View.INVISIBLE
+    }
+
+    // Hide progress bar after data is loaded
+    private fun hideProgressBar2() = with(binding) {
+        progressBar2.visibility = View.GONE
         recyclerView2.visibility = View.VISIBLE
     }
 
