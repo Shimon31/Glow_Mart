@@ -1,60 +1,81 @@
 package com.bcsbattle.sbs_e_mart.ui.search
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.bcsbattle.sbs_e_mart.R
+import com.bcsbattle.sbs_e_mart.base.BaseFragment
+import com.bcsbattle.sbs_e_mart.data.Product.ResponseProduct
+import com.bcsbattle.sbs_e_mart.databinding.FragmentSearchBinding
+import dagger.hilt.android.AndroidEntryPoint
+@AndroidEntryPoint
+class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate),
+    SearchAdapter.Listener {
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+    private val viewModel: SearchViewModel by viewModels()
+    private val adapter: SearchAdapter by lazy { SearchAdapter(this) }
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SearchFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class SearchFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var allProducts: List<ResponseProduct> = emptyList()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.recyclerView1.adapter = adapter
+
+        // observe loading state
+        viewModel.isLoading.observe(viewLifecycleOwner) { loading ->
+            if (loading) showProgressBar() else hideProgressBar()
         }
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
-    }
+        // observe products
+        viewModel.allSearchProducts.observe(viewLifecycleOwner) { products ->
+            allProducts = products ?: emptyList()
+            adapter.submitList(allProducts) // initially show all
+        }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SearchFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SearchFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        // setup search
+        binding.searchBar.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                filterList(query)
+                return true
             }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+        })
+    }
+
+    private fun filterList(query: String?) {
+        val q = query?.trim().orEmpty()
+        val filtered = if (q.isNotEmpty()) {
+            allProducts.filter { product ->
+                product.name?.contains(q, ignoreCase = true) ?: false
+            }
+        } else {
+            allProducts
+        }
+        adapter.submitList(filtered)
+    }
+
+    private fun showProgressBar() = with(binding) {
+        progressBar.visibility = View.VISIBLE
+        recyclerView1.visibility = View.INVISIBLE
+
+    }
+
+    // Hide progress bar after data is loaded
+    private fun hideProgressBar() = with(binding) {
+        progressBar.visibility = View.GONE
+        recyclerView1.visibility = View.VISIBLE
+
+    }
+    override fun onItemClick(id: Int?) {
+        // handle navigation to details
     }
 }
