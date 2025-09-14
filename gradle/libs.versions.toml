@@ -1,5 +1,5 @@
 [versions]
-agp = "8.12.2"
+agp = "8.12.3"
 gson = "2.11.0"
 imageslider = "1.0.0"
 imageslideshow = "0.1.2"
@@ -24,6 +24,8 @@ coil = "2.7.0"
 fragment = "1.8.9"
 nav_version = "2.9.3"
 materialVersion = "1.13.0"
+playServicesAnalyticsImpl = "18.2.0"
+recyclerview = "1.4.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -52,6 +54,8 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
+play-services-analytics-impl = { group = "com.google.android.gms", name = "play-services-analytics-impl", version.ref = "playServicesAnalyticsImpl" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 
 
 [plugins]

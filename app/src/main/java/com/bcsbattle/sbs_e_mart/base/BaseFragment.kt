@@ -13,7 +13,7 @@ abstract class BaseFragment<VB : ViewBinding>(
 ) {
 
 
-    private var _binding: VB? = null
+    var _binding: VB? = null
     val binding: VB
         get() = _binding as VB
 
