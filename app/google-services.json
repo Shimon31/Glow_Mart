@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "489052856615",
+    "project_id": "glow-mart-8ae02",
+    "storage_bucket": "glow-mart-8ae02.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489052856615:android:8e1bdeecfc53a832b80902",
+        "android_client_info": {
+          "package_name": "com.bcsbattle.sbs_e_mart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvTx-cRzPXvpUiRntFBBC_neUATai-SZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
