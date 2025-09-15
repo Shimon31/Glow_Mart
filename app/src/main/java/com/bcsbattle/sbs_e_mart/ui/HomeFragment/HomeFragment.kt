@@ -36,6 +36,9 @@ class HomeFragment :
         binding.cardView2.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
         }
+        binding.seeAllTv.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+        }
     }
 
     // Setup RecyclerView1 (Recommended Products)
