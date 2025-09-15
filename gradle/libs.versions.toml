@@ -1,5 +1,6 @@
 [versions]
 agp = "8.12.3"
+circleimageview = "3.1.0"
 gson = "2.11.0"
 imageslider = "1.0.0"
 imageslideshow = "0.1.2"
@@ -40,6 +41,7 @@ androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragme
 androidx-navigation-fragment-v292 = { module = "androidx.navigation:navigation-fragment", version.ref = "navigationFragment" }
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigationCompose" }
 androidx-navigation-ui-v292 = { module = "androidx.navigation:navigation-ui", version.ref = "navigationUi" }
+circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }

@@ -89,6 +89,9 @@ dependencies {
     //coil
     implementation(libs.coil)
 
+    // CircleImageView
+    implementation(libs.circleimageview)
+
 
 
 

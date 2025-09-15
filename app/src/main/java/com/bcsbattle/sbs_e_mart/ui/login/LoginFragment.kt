@@ -20,6 +20,14 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         // Initialize Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance()
 
+        // Check if user is already logged in
+        val currentUser = firebaseAuth.currentUser
+        if (currentUser != null) {
+            // User already logged in, navigate to HomeFragment
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            return
+        }
+
         // Login button click
         binding.loginButton.setOnClickListener {
             val email = binding.emailEditText.text.toString().trim()
@@ -33,17 +41,12 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
             }
         }
 
-
         // Navigate to Sign Up
         binding.signUpText.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
-       /*     requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.action_loginFragment_to_signUpFragment, SignUpFragment())
-                .addToBackStack(null)
-                .commit()*/
         }
-
     }
+
 
     private fun loginUser(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
