@@ -2,7 +2,6 @@ package com.bcsbattle.sbs_e_mart.ui.details
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -21,60 +20,45 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBind
 
     private val viewModel: HomeViewModel by viewModels()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: android.view.View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Back button functionality
         binding.backBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_detailsFragment_to_homeFragment)
+            findNavController().navigateUp()
         }
 
-        // Get product ID from navigation arguments
-        val productId = arguments?.getInt("product_id")
-        Log.d("DetailsFragment", "Received product ID: $productId")
+        val productId = arguments?.getInt("product_id") ?: return
 
-        if (productId == null) {
-            return
-        }
-
-        // Call API to get product details
         viewModel.getProductById(productId)
-
-        // Observe the response
         viewModel.productResponse.observe(viewLifecycleOwner) { product ->
-            product?.let {
-                binding.apply {
-                    productImage.load(it.imageLink)
-                    productName.text = "Product Name: ${it.name}"
-                    productBrand.text = "Brand: ${it.brand}"
-                    productPrice.text = "Price: $${it.price}"
-                    productRating.text = "Rate: ${it.rating}"
-                    productCategory.text = "Category: ${it.category}"
-                    productDescription.text = "Description: ${it.description}"
-
-                    // Add to Cart button functionality
-                    addToCartTV.setOnClickListener {view ->
-                        addToCart(it)
-                    }
-                }
-            }
+            product?.let { bindProduct(it) }
         }
     }
 
-    private fun addToCart(product: ResponseProduct) {
-        // Add the product to cart
-        Cart.addItem(
-            CartItem(
-                product.name,
-                product.price ?: "0.0",
-                product.category ?: "Unknown",
-                1,
-                product.imageLink
-            )
-        )
-        Toast.makeText(requireContext(), "${product.name} added to cart", Toast.LENGTH_SHORT).show()
+    private fun bindProduct(product: ResponseProduct) {
+        binding.apply {
+            productImage.load(product.imageLink)
+            productName.text = "Product Name: ${product.name}"
+            productBrand.text = "Brand: ${product.brand}"
+            productPrice.text = "Price: $${product.price}"
+            productRating.text = "Rate: ${product.rating}"
+            productCategory.text = "Category: ${product.category}"
+            productDescription.text = "Description: ${product.description}"
 
-        // Navigate to the CartFragment
-        findNavController().navigate(R.id.action_detailsFragment_to_cartFragment3)
+            addToCartTV.setOnClickListener {
+                Cart.addItem(
+                    CartItem(
+                        product.name,
+                        product.price ?: "0.0",
+                        product.category ?: "Unknown",
+                        1,
+                        product.imageLink
+                    ),
+                    requireContext() // important for persistence
+                )
+                Toast.makeText(requireContext(), "${product.name} added to cart", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_detailsFragment_to_cartFragment3)
+            }
+        }
     }
 }
