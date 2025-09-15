@@ -38,7 +38,11 @@
         android:id="@+id/cartFragment"
         android:name="com.bcsbattle.sbs_e_mart.ui.cart.CartFragment"
         android:label="fragment_cart"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.bcsbattle.sbs_e_mart.ui.profile.ProfileFragment"

@@ -7,9 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.bcsbattle.sbs_e_mart.data.Product.ResponseProduct
+import com.bcsbattle.sbs_e_mart.data.model.Product.ResponseProduct
 import com.bcsbattle.sbs_e_mart.databinding.ProductItem2Binding
-import com.bcsbattle.sbs_e_mart.databinding.ProductItemBinding
 
 class HomeAdapter2(private val listener: Listener) :
     ListAdapter<ResponseProduct, HomeAdapter2.HomeViewModel2>(comparator) {

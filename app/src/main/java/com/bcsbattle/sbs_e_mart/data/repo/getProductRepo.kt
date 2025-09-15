@@ -1,7 +1,6 @@
-package com.bcsbattle.sbs_e_mart.repo
-
-import com.bcsbattle.sbs_e_mart.Service.ProductService
-import com.bcsbattle.sbs_e_mart.data.Product.ResponseProduct
+package com.bcsbattle.sbs_e_mart.data.repo
+import com.bcsbattle.sbs_e_mart.data.Service.ProductService
+import com.bcsbattle.sbs_e_mart.data.model.Product.ResponseProduct
 import retrofit2.Response
 import javax.inject.Inject
 

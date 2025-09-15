@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.bcsbattle.sbs_e_mart.data.Product.ResponseProduct
+import com.bcsbattle.sbs_e_mart.data.model.Product.ResponseProduct
 import com.bcsbattle.sbs_e_mart.databinding.AllProductItemBinding
 
 class SearchAdapter(val listener: Listener) : ListAdapter<ResponseProduct, SearchAdapter.SearchViewHolder>(comparator) {

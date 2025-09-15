@@ -1,4 +1,4 @@
-package com.bcsbattle.sbs_e_mart.data.Product
+package com.bcsbattle.sbs_e_mart.data.model.Product
 
 
 import com.google.gson.annotations.SerializedName

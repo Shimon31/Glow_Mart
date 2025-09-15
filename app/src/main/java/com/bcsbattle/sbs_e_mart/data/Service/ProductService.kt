@@ -1,6 +1,6 @@
-package com.bcsbattle.sbs_e_mart.Service
+package com.bcsbattle.sbs_e_mart.data.Service
 
-import com.bcsbattle.sbs_e_mart.data.Product.ResponseProduct
+import com.bcsbattle.sbs_e_mart.data.model.Product.ResponseProduct
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

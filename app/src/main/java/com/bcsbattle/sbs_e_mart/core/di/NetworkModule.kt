@@ -1,7 +1,8 @@
-package com.bcsbattle.sbs_e_mart.di
+package com.bcsbattle.sbs_e_mart.core.di
 
-import com.bcsbattle.sbs_e_mart.Service.ProductService
-import com.bcsbattle.sbs_e_mart.utils.baseUrl
+
+import com.bcsbattle.sbs_e_mart.core.utils.baseUrl
+import com.bcsbattle.sbs_e_mart.data.Service.ProductService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

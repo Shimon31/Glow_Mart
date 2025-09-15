@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bcsbattle.sbs_e_mart.data.Product.ResponseProduct
-import com.bcsbattle.sbs_e_mart.repo.getProductRepo
+import com.bcsbattle.sbs_e_mart.data.model.Product.ResponseProduct
+import com.bcsbattle.sbs_e_mart.data.repo.getProductRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

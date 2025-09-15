@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.bcsbattle.sbs_e_mart.data.CartItem
 import com.bcsbattle.sbs_e_mart.databinding.ItemCartBindingBinding
-import com.bcsbattle.sbs_e_mart.utils.Cart
 
 class CartAdapter(
     private val items: MutableList<CartItem>,

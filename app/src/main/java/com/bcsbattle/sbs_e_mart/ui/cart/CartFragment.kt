@@ -2,7 +2,9 @@ package com.bcsbattle.sbs_e_mart.ui.cart
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bcsbattle.sbs_e_mart.R
 import com.bcsbattle.sbs_e_mart.base.BaseFragment
 import com.bcsbattle.sbs_e_mart.databinding.FragmentCartBinding
 import com.bcsbattle.sbs_e_mart.utils.Cart
@@ -13,6 +15,10 @@ class CartFragment : BaseFragment<FragmentCartBinding>(FragmentCartBinding::infl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.backBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_cartFragment_to_homeFragment)
+        }
 
         // Load saved cart
         Cart.loadCart(requireContext())

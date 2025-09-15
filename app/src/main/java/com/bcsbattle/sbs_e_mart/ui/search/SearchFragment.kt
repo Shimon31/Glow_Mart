@@ -1,17 +1,13 @@
 package com.bcsbattle.sbs_e_mart.ui.search
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bcsbattle.sbs_e_mart.R
 import com.bcsbattle.sbs_e_mart.base.BaseFragment
-import com.bcsbattle.sbs_e_mart.data.Product.ResponseProduct
+import com.bcsbattle.sbs_e_mart.data.model.Product.ResponseProduct
 import com.bcsbattle.sbs_e_mart.databinding.FragmentSearchBinding
 import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
