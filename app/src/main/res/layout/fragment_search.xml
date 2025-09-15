@@ -7,57 +7,94 @@
     android:background="@color/black"
     tools:context=".ui.search.SearchFragment">
 
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchBar"
-        android:layout_width="match_parent"
+    <!-- Search Bar with Filter Button -->
+    <LinearLayout
+        android:id="@+id/searchFilterLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="25dp"
-        android:background="@drawable/searchbar_bg"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search products..."
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchBar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:background="@drawable/searchbar_bg"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search products..."
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
 
+        <ImageButton
+            android:id="@+id/filterButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="Filter"
+            android:src="@drawable/baseline_filter_alt_24" />
+    </LinearLayout>
+
+    <!-- Active Filters Chips -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/activeFiltersChipGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:singleLine="true"
+        app:chipSpacing="8dp"
+        app:layout_constraintTop_toBottomOf="@id/searchFilterLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Heading -->
     <TextView
         android:id="@+id/allProductsTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Here All Items For You"
+        android:layout_marginTop="10dp"
+        android:text="All Products For You"
         android:textColor="@color/primaryClr"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/searchBar"
-        app:layout_constraintTop_toBottomOf="@id/searchBar" />
+        app:layout_constraintTop_toBottomOf="@id/activeFiltersChipGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp" />
 
-
+    <!-- Products RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintStart_toStartOf="@id/searchBar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/allProductsTV"
         app:spanCount="4"
         tools:listitem="@layout/all_product_item" />
 
+    <!-- Progress Bar -->
     <ProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:indeterminateTint="@color/primaryClr"
         android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
