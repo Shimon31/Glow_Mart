@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.bcsbattle.sbs_e_mart.R
-import com.bcsbattle.sbs_e_mart.base.BaseFragment
+import com.bcsbattle.sbs_e_mart.core.base.BaseFragment
 import com.bcsbattle.sbs_e_mart.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest

@@ -1,6 +1,5 @@
 package com.bcsbattle.sbs_e_mart.ui.profile
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,7 +9,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import com.bcsbattle.sbs_e_mart.MainActivity
 import com.bcsbattle.sbs_e_mart.R
-import com.bcsbattle.sbs_e_mart.base.BaseFragment
+import com.bcsbattle.sbs_e_mart.core.base.BaseFragment
 import com.bcsbattle.sbs_e_mart.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 

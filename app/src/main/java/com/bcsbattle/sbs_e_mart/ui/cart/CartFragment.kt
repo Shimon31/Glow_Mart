@@ -5,7 +5,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bcsbattle.sbs_e_mart.R
-import com.bcsbattle.sbs_e_mart.base.BaseFragment
+import com.bcsbattle.sbs_e_mart.core.base.BaseFragment
 import com.bcsbattle.sbs_e_mart.databinding.FragmentCartBinding
 import com.bcsbattle.sbs_e_mart.utils.Cart
 

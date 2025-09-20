@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bcsbattle.sbs_e_mart.base.BaseFragment
+import com.bcsbattle.sbs_e_mart.core.base.BaseFragment
 import com.bcsbattle.sbs_e_mart.data.model.message.Message
 import com.bcsbattle.sbs_e_mart.databinding.FragmentMessageBinding
 

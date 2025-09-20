@@ -1,4 +1,4 @@
-package com.bcsbattle.sbs_e_mart.base
+package com.bcsbattle.sbs_e_mart.core.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

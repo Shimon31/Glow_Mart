@@ -3,14 +3,12 @@ package com.bcsbattle.sbs_e_mart.ui.HomeFragment
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bcsbattle.sbs_e_mart.R
-import com.bcsbattle.sbs_e_mart.base.BaseFragment
+import com.bcsbattle.sbs_e_mart.core.base.BaseFragment
 import com.bcsbattle.sbs_e_mart.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 

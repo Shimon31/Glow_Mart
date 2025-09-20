@@ -6,7 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.bcsbattle.sbs_e_mart.R
-import com.bcsbattle.sbs_e_mart.base.BaseFragment
+import com.bcsbattle.sbs_e_mart.core.base.BaseFragment
 import com.bcsbattle.sbs_e_mart.databinding.FragmentDetailsBinding
 import com.bcsbattle.sbs_e_mart.ui.HomeFragment.HomeViewModel
 import com.bcsbattle.sbs_e_mart.utils.Cart
