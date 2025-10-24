@@ -16,6 +16,7 @@ class HomeAdapter(private val listener: Listener) :
         fun onItemClick(id: Int?)
     }
 
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
