@@ -30,6 +30,7 @@ class HomeAdapter(private val listener: Listener) :
         )
     }
 
+
     override fun onBindViewHolder(
         holder: HomeViewModel,
         position: Int
