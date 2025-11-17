@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.SBS_EMart" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-     <item name="colorPrimary">@color/primaryClr</item>
+        <item name="colorPrimary">@color/primaryClr</item>
+        <item name="android:statusBarColor">@color/primaryClr</item>
+        <item name="android:windowLightStatusBar">true</item> <!-- dark icons for light status bar -->
     </style>
 
     <style name="Theme.SBS_EMart" parent="Base.Theme.SBS_EMart" />
