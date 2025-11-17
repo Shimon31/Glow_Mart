@@ -1,4 +1,3 @@
-cat << 'EOF' > README.md
 # Glow Mart 💄
 
 **Glow Mart** is an **Android app** for discovering and exploring makeup products. It uses a **free makeup API** to fetch product details and provides a clean, modern interface with **Dark Mode support**.  
@@ -25,11 +24,13 @@ Here are some screenshots of the app in action:
 
 <table>
   <tr>
-    <td><img src="https://github.com/Shimon31/Task_Manager/blob/main/1.png?raw=true" width="200"/></td>
-    <td><img src="https://github.com/Shimon31/Task_Manager/blob/main/2.png?raw=true" width="200"/></td>
-    <td><img src="https://github.com/Shimon31/Task_Manager/blob/main/3.png?raw=true" width="200"/></td>
-    <td><img src="https://github.com/Shimon31/Task_Manager/blob/main/4.png?raw=true" width="200"/></td>
-    <td><img src="https://github.com/Shimon31/Task_Manager/blob/main/5.png?raw=true" width="200"/></td>
+    <td><img src="https://github.com/Shimon31/Glow_Mart/blob/master/login_screen.png?raw=true" width="200"/></td>
+    <td><img src="https://github.com/Shimon31/Glow_Mart/blob/master/home_screen.png?raw=true" width="200"/></td>
+    <td><img src="https://github.com/Shimon31/Glow_Mart/blob/master/chat_screen.png?raw=true" width="200"/></td>
+    <td><img src="https://github.com/Shimon31/Glow_Mart/blob/master/all_catagories.png?raw=true" width="200"/></td>
+    <td><img src="https://github.com/Shimon31/Glow_Mart/blob/master/details_product.png?raw=true" width="200"/></td>
+    <td><img src="https://github.com/Shimon31/Glow_Mart/blob/master/cart_screen.png?raw=true" width="200"/></td>
+    <td><img src="https://github.com/Shimon31/Glow_Mart/blob/master/profile.png?raw=true" width="200"/></td>
   </tr>
 </table>
 
