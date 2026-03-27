@@ -1,11 +1,11 @@
 [versions]
-agp = "8.11.2"
+agp = "9.1.0"
 circleimageview = "3.1.0"
 gson = "2.11.0"
 imageslider = "1.0.0"
 imageslideshow = "0.1.2"
 javapoet = "1.13.0"
-kotlin = "2.1.0"
+kotlin = "2.2.10"
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
